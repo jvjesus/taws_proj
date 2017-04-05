@@ -1,0 +1,39 @@
+body{
+  background-color: #f8f8ff;
+}
+
+input[type=text] {
+    width: 297px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('images/search.png');
+    background-position: 10px 10px;
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out, margin-left 0.4s ease-in-out;
+    margin-top: -35px;
+}
+
+input[type=text]:focus {
+    width: 55%;
+    margin-left: -10%;
+    outline: 0;
+}
+
+#search{
+  text-shadow: 2px 1px 2px #83878e;
+  margin-top: 18%;
+  margin-left: 40%;
+}
+
+#search h1{
+  font-size: 90px;
+  font-family: 'Helvetica';
+  color: #3a3f47;
+  margin-left: -45px;
+}
