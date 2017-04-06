@@ -1,35 +1,77 @@
 // Nome do utilizador a analisar
 var targetUserName;
+var selector;
 var apikey= "Z2p4KF8ZlYHtNFzFhzL3XEsP2XlHphwf";
 var nomes;
 
 // Array associativo com nome do utilizador como chave e valor de amizade como valor
 var amigos = {};
+var interesses = {};
 var users_url = "https://www.behance.net/v2/users/";
+var fiedls_url = "https://www.behance.net/v2/fields/";
+
+
 
 $(document).ready(function(){
   console.log("Ready!");
-  $("#query").on("keypress", function(event){
-    console.log(event.keyCode);
-      if(event.keyCode == 13){
-        event.preventDefault();
-          $("#load").hide();
-          search();
-     }
-  });
+  //selector = $('#selectOne option:contains("City")').val();
 
-  $("#query").on("keyup", function(event){
-    event.preventDefault();
-  });
+
+
+  $( "select" )
+    .change(function() {
+      selector = $( "select option:selected").val();
+      //selector.each(function() {
+        console.log(selector);
+        if(selector == "city"){
+          $("#textinput").show();
+          $(".interest").hide();
+
+
+       }
+
+       if(selector == "interest"){
+        $("#textinput").hide();
+        $(".interest").show();
+        getFieldsInfo();
+        //new selector with for to check all interest areas
+        }
+
+      if(selector == "user"){
+        $("#textinput").show();
+        $(".interest").hide();
+
+        //optional: add effect (search box grow and get
+        //back to the same size in 0.4s)
+
+       $("#query").on("keypress", function(event){
+         console.log(event.keyCode);
+           if(event.keyCode == 13){
+             event.preventDefault();
+               $("#load").hide();
+               search();
+          }
+       });
+
+       $("#query").on("keyup", function(event){
+         event.preventDefault();
+       });
+     }
+
+    //  });
+    })
+.trigger( "change" );
+
 });
 
 
 function search(){
 	targetUserName = $("#query").val();
-	//searching();
-
+  $("h1").hide();
+  $("#textinput").hide();
+  $("#selectOne").hide();
+  $('#search').css("height", "0px");
 	getUserInfo();
-
 }
 
 function getUserInfo(){
@@ -62,8 +104,10 @@ function processUserInfo(response){
         var imagem_url = response.user.images[276];
         var interesses = response.user.fields;
 
-        $("p").append("<b>Nome: </b>" + nome + "<br> <b>Cidade: </b>" + cidade + "<br> <img src=" + imagem_url + "> <br> <b>Interesses: </b>" + interesses);
-
+        $(".userResults").append("<div id='quad'> <h1>" + nome +
+         "<br> </h1> <img id='userImage' src=" + imagem_url
+         + "> <br><p><b>Cidade: </b>"+ cidade +
+         "<br><b>Interesses: </b>" + interesses +"</p></div>");
         //getUserFriends();
     //}
     //implementar: chamar getUserFrieds()

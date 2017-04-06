@@ -26,7 +26,7 @@ input[type=text]:focus {
 }
 
 #search{
-  text-shadow: 2px 1px 2px #83878e;
+  text-shadow: 5px 5px 17px #919293;
   margin-top: 18%;
   margin-left: 40%;
 }
@@ -36,4 +36,70 @@ input[type=text]:focus {
   font-family: 'Helvetica';
   color: #3a3f47;
   margin-left: -45px;
+}
+
+#selectOne select{
+  width: 200px;
+  margin-left: 4.5%;
+  margin-top: 2%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+}
+
+.interest select{
+  width: 200px;
+  margin-left: 4.5%;
+  margin-top: 2%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+}
+
+.userResults{
+    width: 100%;
+    text-align: center;
+    align-content: center;
+
+}
+
+#quad{
+    width: 33%;
+    height: 66%;
+    margin-left: 33%;
+    margin-top: 10%;
+    /*border: 2px solid #d6d6d6;*/
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#quad h1{
+    font-family: "Helvetica";
+    font-size: 40px;
+}
+
+#quad img{
+    margin-bottom: 15px;
+    margin-top: 5px;
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#userImage{
+    border-radius: 50% 50%;
 }

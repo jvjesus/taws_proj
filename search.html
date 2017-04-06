@@ -8,24 +8,40 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 		<!-- Ficheiro JavaScript -->
-    <script src="bearch.js"></script>
+		<script src="bearch.js"></script>
+		<script src="interest.js"></script>
+
   </head>
   <body>
+
+      <div class="content">
       <div id="search">
         <h1>BEARCH</h1>
+          <div id="textinput">
         <form>
           <input type="text" name="search" placeholder="Bearch.." id="query">
         </form>
       </div>
-      <div id="status"></div>
+        <div id="selectOne">
+          <select>
+            <option value="user">User</option>
+            <option value="city">City</option>
+            <option value="interest">Interest</option>
+          </select>
+        </div>
+				<div class="interest">
+					<select id="int"></select>
+				</div>
+			</div>
+
+      <div class="userResults"></div>
+
+			<div id="status"></div>
 			<div id="load">
 				<!--<img src='loading.gif' alt='Loading...' />-->
       </div>
-      <p></p>
-
-
       <div id="table"></div>
-      </div>
+
     </div>
   </body>
 </html>
